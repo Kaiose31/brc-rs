@@ -6,7 +6,7 @@ use std::io::Write;
 struct Values {
     min: f32,
     max: f32,
-    mean: f32,
+    sum: f32,
     count: u16,
 }
 
@@ -15,7 +15,7 @@ impl Values {
         Values {
             min: 100.0,
             max: -100.0,
-            mean: 0.0,
+            sum: 0.0,
             count: 0,
         }
     }
@@ -24,7 +24,7 @@ impl Values {
         self.min = self.min.min(val);
         self.max = self.max.max(val);
         self.count += 1;
-        self.mean = (val + self.mean) / self.count as f32;
+        self.sum += val;
     }
 }
 
@@ -48,6 +48,14 @@ pub fn solve(path: &str) {
     //Done processing, Generate output Data
     let mut file = File::create("data/output.txt").unwrap();
     for (station, vals) in &temps {
-        writeln!(file, "{};{};{};{}", station, vals.min, vals.mean, vals.max).unwrap();
+        writeln!(
+            file,
+            "{};{};{};{}",
+            station,
+            vals.min,
+            vals.sum / vals.count as f32,
+            vals.max
+        )
+        .unwrap();
     }
 }

@@ -1,6 +1,6 @@
 # Increasingly performant implementations of 1BRC
 
-1. Naive (read_lines with BTreeMap) 
+1. Naive (read_lines with BTreeMap, Single Threaded) 
 ```
 | Command | Mean [s] | Min [s] | Max [s] | Relative |
 |:---|---:|---:|---:|---:|
