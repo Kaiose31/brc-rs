@@ -6,7 +6,12 @@
 |:---|---:|---:|---:|---:|
 | `./target/release/brc_rs` | 223.916 ± 2.057 | 221.079 | 227.251 | 1.00 |
 
-2. Buffered Read and Write (With Hashmap, Single Threaded)
+2. Read Entire File(Single, Threaded)
+| Command | Mean [s] | Min [s] | Max [s] | Relative |
+|:---|---:|---:|---:|---:|
+| `./target/release/brc_rs` | 131.652 ± 0.797 | 131.149 | 133.036 | 1.00 |
+
+3. Buffered Read and Write (With Hashmap, Single Threaded)
 
 | Command | Mean [s] | Min [s] | Max [s] | Relative |
 |:---|---:|---:|---:|---:|

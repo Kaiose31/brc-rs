@@ -1,4 +1,4 @@
-use std::fmt::format;
+use std::fmt::Display;
 
 #[derive(Debug)]
 pub struct Values {
@@ -24,8 +24,16 @@ impl Values {
         self.count += 1;
         self.sum += val;
     }
+}
 
-    pub fn to_string(&self) -> String {
-        format!("{};{};{}", self.min, self.sum / self.count as f32, self.max)
+impl Display for Values {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{};{};{}",
+            self.min,
+            self.sum / self.count as f32,
+            self.max
+        )
     }
 }
