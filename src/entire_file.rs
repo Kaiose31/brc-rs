@@ -45,7 +45,7 @@ fn parse_data(s: &str) -> BTreeMap<String, Values> {
             }
             '\n' => {
                 map.entry(station.clone())
-                    .or_insert(Values::new())
+                    .or_insert(Values::default())
                     .push(cur_val.parse::<f32>().unwrap());
                 cur_val.clear();
             }

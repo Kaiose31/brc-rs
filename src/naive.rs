@@ -9,7 +9,7 @@ pub fn solve(path: &str) {
     for line in binding.lines() {
         if let Some((station, temp)) = line.split_once(';') {
             if !temps.contains_key(station) {
-                let mut values = Values::new();
+                let mut values = Values::default();
                 values.push(temp.parse::<f32>().unwrap());
                 temps.insert(station, values);
             } else {

@@ -1,4 +1,4 @@
-# Increasingly performant implementations of 1BRC
+# 1BRC implementations
 
 1. Naive (read_lines with BTreeMap, Single Threaded) 
 
@@ -17,3 +17,9 @@
 | Command | Mean [s] | Min [s] | Max [s] | Relative |
 |:---|---:|---:|---:|---:|
 | `./target/release/brc_rs` | 97.004 ± 0.457 | 96.412 | 97.717 | 1.00 |
+
+4. Memory Mapped File Chunks (Multi Threaded)
+
+| Command | Mean [s] | Min [s] | Max [s] | Relative |
+|:---|---:|---:|---:|---:|
+| `./target/release/brc_rs` | 26.843 ± 0.291 | 26.590 | 27.276 | 1.00 |
