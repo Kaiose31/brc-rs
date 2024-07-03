@@ -1,3 +1,0 @@
-| Command | Mean [s] | Min [s] | Max [s] | Relative |
-|:---|---:|---:|---:|---:|
-| `./target/release/brc_rs` | 97.004 ± 0.457 | 96.412 | 97.717 | 1.00 |
